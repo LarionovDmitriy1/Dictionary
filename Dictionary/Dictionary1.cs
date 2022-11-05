@@ -8,7 +8,7 @@ namespace Dictionary;
 
 public class Dictionary1
 {
-    private Dictionary<string, string> _dictionary;
+    private Dictionary<string,string> _dictionary;
     public Dictionary1()
     {
         _dictionary = new Dictionary<string, string>();
@@ -56,7 +56,7 @@ public class Dictionary1
         {
             foreach (var dict in _dictionary)
             {
-                Console.WriteLine(dict);
+                Console.WriteLine($"Перевод(ы) слова {dict.Key} - {dict.Value}");
             }
         }
     }
@@ -73,11 +73,10 @@ public class Dictionary1
                 {
                     if (dic.Key == checkTranslate)
                     {
-                        Console.WriteLine($"Перевод слова - {dic.Value}");
+                        Console.WriteLine($"Перевод слова {checkTranslate} - {dic.Value}");
                         return;
                     }
                 }
-                return;
             }
             else
             {
@@ -95,7 +94,7 @@ public class Dictionary1
     }
     public void DeleteDictionary()
     {
-        if (_dictionary.Count == 0)
+        if (_dictionary.Count != 0)
         {
             Console.WriteLine("Какое слово из словаря вы хотите удалить");
             Console.WriteLine();
@@ -103,7 +102,11 @@ public class Dictionary1
             bool check = _dictionary.ContainsKey(delete);
             if (check)
             {
-                _dictionary.Remove(delete);
+                    _dictionary.Remove(delete);
+                    Console.WriteLine();
+                    Console.WriteLine("Слово успешно удалено");
+                    Console.WriteLine();
+                    return;            
             }
             else
             {
@@ -150,6 +153,48 @@ public class Dictionary1
             Console.WriteLine();
             Console.WriteLine("Словарь пуст");
             Console.WriteLine();
+        }
+    }
+    public void AddTranslate()
+    {
+        Console.WriteLine("Введите слово, к которому вы хотите добавить перевод");
+        string select = Console.ReadLine();
+        bool check = _dictionary.ContainsKey(select);
+        if (check)
+        {
+            foreach (var dic in _dictionary)
+            {
+                if (dic.Key == select)
+                {
+                    Console.WriteLine("Введите перевод к этому слову");
+                    string translate = Console.ReadLine();
+                    _dictionary[dic.Key] = dic.Value + ',' +' ' + translate;
+                    return;
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine();
+            Console.WriteLine("Слова нет");
+            Console.WriteLine();
+        }
+    }
+    public void DeleteTranslate()
+    {
+        Console.WriteLine("Введите ключ слова, у которого вы хотите удалить перевод");
+        string select = Console.ReadLine();
+        bool check=_dictionary.ContainsKey(select);
+        if (check)
+        {
+            foreach (var dic in _dictionary) 
+            {
+                if (dic.Key == select)
+                {
+                    Console.WriteLine("Введите перевод слова, который вы хотите удалить");
+                    string deleteTranslate = Console.ReadLine();     // Как удалить отдельный перевод
+                }
+            }
         }
     }
 }

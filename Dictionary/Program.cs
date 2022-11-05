@@ -9,7 +9,9 @@ void Menu()
     Console.WriteLine("2. Просмотреть словарь");
     Console.WriteLine("3. Проверить наличие перевода слова");
     Console.WriteLine("4. Удалить слово и его перевод");
-    Console.WriteLine("5. Изменть перевод слова по ключу");
+    Console.WriteLine("5. Изменить перевод слова по ключу");
+    Console.WriteLine("6. Добавить перевод к слову");
+    Console.WriteLine("7. Удалить перевод слова");
 }
 void GetMenu()
 {
@@ -34,6 +36,12 @@ void GetMenu()
                 break;
             case 5:
                 dic.ChangeKey();
+                break;
+            case 6:
+                dic.AddTranslate();
+                break;
+            case 7:
+                dic.DeleteTranslate();
                 break;
             default:
                 Console.WriteLine();
