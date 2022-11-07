@@ -26,7 +26,7 @@ void GetMenu()
                 dic.CheckSelect(select);
                 break;
             case 2:
-                dic.ChechDictionary();
+                dic.CheckDictionary();
                 break;
             case 3:
                 dic.CheckTranslate();
@@ -35,7 +35,7 @@ void GetMenu()
                 dic.DeleteDictionary();
                 break;
             case 5:
-                dic.ChangeKey();
+                dic.ChangeTranslate();
                 break;
             case 6:
                 dic.AddTranslate();
