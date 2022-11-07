@@ -8,7 +8,7 @@ void Menu()
     Console.WriteLine("1. Ввести слово");
     Console.WriteLine("2. Просмотреть словарь");
     Console.WriteLine("3. Проверить наличие перевода слова");
-    Console.WriteLine("4. Удалить слово и его перевод");
+    Console.WriteLine("4. Удалить слово и его переводы");
     Console.WriteLine("5. Изменить перевод слова по ключу");
     Console.WriteLine("6. Добавить перевод к слову");
     Console.WriteLine("7. Удалить перевод слова");
